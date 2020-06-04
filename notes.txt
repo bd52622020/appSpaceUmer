@@ -55,4 +55,4 @@ Disadvantages multithreading
     • Code is usually harder to understand and increases the potential for race conditions increases dramatically
 
 
-Q2 Is pyhton multi threading and processing is it tru way to create parallel thread?
+Q2 Is python multi threading and processing is it true way to create parallel thread?
