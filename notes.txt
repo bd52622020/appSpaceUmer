@@ -57,6 +57,7 @@ Disadvantages multithreading
 
 
 Q2 Is python multi threading and processing is it true way to create parallel thread?
+Python support both libraries i.e multithreading and multiprocessing. Multithreading allows for multiple threads of the same process to be created and has open communication among the theads the reason why this class cannot be labled as true multiprocessing is because of the global interpreter lock (GIL), which ensures that only one thread runs at a time. Because a thread cedes the GIL whenever it uses I/O, this means that although threads are a bad idea in CPU-bound Python programs, they're a good idea when you're dealing with I/O. Now multiprocessing library side-steps the GIL by using sb-processes instead of threads this allows the programmer to fully leverage multiple processors on a given machine. Unlike threads the subprocess do not directly communitate with on another as each process is separate instance. To bypass these limitations the library has queue class which can be used as a medium to communicate between the processes. By having these functinoalities the python does support true multiprocessing
 
 stated HDP
 reset password for root and ambari
