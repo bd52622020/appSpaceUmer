@@ -37,7 +37,8 @@ HDFS
 -name nodes contains the log data regarding all the data nodes
 -any ediding done on data nodes is first communicated to name and then on data nodes
 -a copy of each file on data node is kept on the remaining data nodes in case of failure
--
+
+04-06-2020
 Q1 Difference between multiprocessing and multithreading?
 
     • A multiprocessing system has more than two processors whereas Multithreading is a program execution technique that allows a single process to have multiple code segments 
@@ -56,3 +57,24 @@ Disadvantages multithreading
 
 
 Q2 Is python multi threading and processing is it true way to create parallel thread?
+
+stated HDP
+reset password for root and ambari
+for ambari the command in ambari-admin-password-reset
+launched ambari
+create a new folder in user/admin and add files
+used jps to view running srvices
+
+05-06-2020
+check for ssh
+launched hdp root using ssh root@127.0.0.1 -p 2222
+move to home folder
+then hdfs dfs -ls / to view the list of directories in the hdfs
+hdfs dfs -ls /user
+hdfs dfs -ls /user/admin
+hdfs dfs -ls /user/admin/mk_dir
+hdfs dfs -cat /user/admin/mk_data/u.genre to read the file
+hdfs dfs -cat /user/admin/mk_data/u.genre | head -n 10 to view top ten row
+hdfs dfs -cat everything after is an option for dfs /user/admin/mk_data/u.genre
+simplely hdfs gives the command list for hdfs
+and hdfs dfs lists all subcommands for dfs  
