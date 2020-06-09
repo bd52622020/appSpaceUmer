@@ -18,14 +18,14 @@ def point(team ='unknown',games =0, wins =0, loss =0, draw = 0):
         Points = Points + (wins * 3)
         Points = Points + 0
         Points = Points + draw
-    if  Points > 20:
+    if  Points > 30:
         print('Points:', Points )
         print('good ! keep it up')
-    elif Points >15 & Points <20:
+    elif Points >20 & Points <30:
         print('Points:', Points )
         print('they are gonna lose')
     else:
         print('Points:', Points )
         print('what a bunch of pathetic players')
 
-point('Man UTD', 30, 10, 6, 5)
+point('Man UTD', 30, 8, 6, 5)
