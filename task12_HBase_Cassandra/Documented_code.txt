@@ -1,0 +1,66 @@
+﻿HBASE
+./start-hbase.sh
+./hbase shell
+create <tablename> <familyname>
+list #to check for table is hbase
+exit shell
+run the following command
+./hbase org.apache.hadoop.hbase.mapreduce.ImportTsv
+-Dimporttsv.separator="|" 
+-Dimporttsv.columns="HBASE_ROW_KEY,cf:genre,cf:id" genre 
+/home/hadoop/Downloads/mk_data/u.genre
+ 
+go back in shell
+scan 'genre' to view data
+
+CASSANDRA
+#start cassandra
+./cassandra
+#start cql
+./cqlsh
+#creating a keyspace
+CREATE KEYSPACE myspace 
+   ... WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+#viewing that keyspace created successfully
+cqlsh> describe keyspaces
+#create table
+cqlsh:tutorialspoint> CREATE TABLE genre(
+                  ... name varchar,
+                  ... id int PRIMARY KEY);
+#verify table
+cqlsh:tutorialspoint> select * from genre;
+
+ id | name
+----+------
+
+cqlsh:tutorialspoint> COPY genre (name,id) FROM '/home/umer/Downloads/mk_data/u.genre' WITH DELIMITER='|' AND HEADER=FALSE;
+Using 1 child processes
+
+Starting copy of tutorialspoint.genre with columns [name, id].
+Processed: 19 rows; Rate:      19 rows/s; Avg. rate:      31 rows/s
+19 rows imported from 1 files in 0.611 seconds (0 skipped).
+cqlsh:tutorialspoint> select * from genre;
+
+ id | name
+----+-------------
+  5 |      Comedy
+ 10 |   Film-Noir
+ 16 |    Thriller
+ 13 |     Mystery
+ 11 |      Horror
+  1 |      Action
+  8 |       Drama
+  0 |     unknown
+  2 |   Adventure
+  4 |  Children's
+ 18 |     Western
+ 15 |      Sci-Fi
+  7 | Documentary
+  6 |       Crime
+  9 |     Fantasy
+ 14 |     Romance
+ 17 |         War
+ 12 |     Musical
+  3 |   Animation
+
+(19 rows)
