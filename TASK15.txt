@@ -1,0 +1,17 @@
+a1
+local[*] constructs the machince to use all cores to starts the spark context
+
+a2
+map applies a function to every element of a RDD
+flatmap does the same fucntion as but also flattens the stream
+
+a3
+parallelize an existing collection 
+reference an external dataset
+
+a4
+map is applied to every element
+mapValue can only be applies to key-value pairs
+
+a5
+reduceByKey
